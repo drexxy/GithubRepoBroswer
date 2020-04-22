@@ -1,0 +1,5 @@
+<section class="phx-hero">
+  <h1>Please enter an organizaion name and press enter</h1>
+</section>
+
+<input type="text" id="org-name" name="org-name">
