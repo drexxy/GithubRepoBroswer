@@ -5,8 +5,6 @@ defmodule GithubRepoBrowserWeb.AuthControllerTest do
   alias GithubRepoBrowser.Accounts
   alias GithubRepoBrowser.Repo
 
-  require IEx
-
   test "callback/2 creates a user if one does not exist with the provided email and sets their id to the session", %{conn: conn} do
     nickname = "Ben"
     email = "ben@ben.com"
@@ -31,8 +29,8 @@ defmodule GithubRepoBrowserWeb.AuthControllerTest do
     initial_user_count = Repo.aggregate(User, :count)
 
     conn = assign(conn, :ueberauth_auth, %{info: %{nickname: nickname, email: email }, credentials: %{token: token }})
-
     conn = get(conn, Routes.auth_path(conn, :callback, "github"))
+
     assert html_response(conn, 302)
     assert initial_user_count == Repo.aggregate(User, :count)
     assert get_session(conn, :user_id) == user.id
