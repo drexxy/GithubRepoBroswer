@@ -5,10 +5,10 @@
 <input type="text" id="org-name" name="org-name">
 
 <div>
-  <p id="error-text">
-  </p>
-  <p id="organization-name">
-  </p>
+  <h1 id="error-text">
+  </h1>
+  <h1 id="organization-name">
+  </h1>
   <ul id='repo-list'>
   </ul>
 </div>
