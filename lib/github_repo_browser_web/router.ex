@@ -7,6 +7,7 @@ defmodule GithubRepoBrowserWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug GithubRepoBrowserWeb.Plugs.SetUser
   end
 
   pipeline :api do
@@ -19,6 +20,14 @@ defmodule GithubRepoBrowserWeb.Router do
     get "/", PageController, :index
 
     resources "/repos", RepoController, only: [:index]
+  end
+
+  scope "/auth", GithubRepoBrowserWeb do
+    pipe_through :browser
+
+    get "/signout", AuthController, :signout
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
   end
 
   # Other scopes may use custom stacks.
