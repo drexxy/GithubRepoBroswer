@@ -6,8 +6,15 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
+    "bootstrap": "^4.4.1",
+    "file-loader": "^6.0.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.5.0",
     "phoenix": "file:../deps/phoenix",
-    "phoenix_html": "file:../deps/phoenix_html"
+    "phoenix_html": "file:../deps/phoenix_html",
+    "popper.js": "^1.16.1",
+    "save": "^2.4.0",
+    "save-dev": "0.0.1-security"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
