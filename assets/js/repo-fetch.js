@@ -28,9 +28,10 @@ document.querySelector('#org-name').addEventListener('keypress', function (e) {
 });
 
 function createRepoList(repo) {
-  return `<li>
+  return `<li class="repo-listing">
     <a href=${repo.html_url} target="_blank">
       ${repo.name}
     </a>
+    <p>Star count: ${repo.stargazers_count}</p>
   </li>`;
 }
