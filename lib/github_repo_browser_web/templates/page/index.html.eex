@@ -1,4 +1,4 @@
 <section class="phx-hero">
-  <h1><%= gettext "Welcome to the %{name}!", name: "Github Repo Broswer" %></h1>
+  <h1><%= gettext "Welcome to the %{name}!", name: "Github Repo Browser" %></h1>
   <%= link "Browse Repos", to: Routes.repo_path(@conn, :index) %>
 </section>
