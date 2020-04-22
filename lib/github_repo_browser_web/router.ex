@@ -21,6 +21,13 @@ defmodule GithubRepoBrowserWeb.Router do
     resources "/repos", RepoController, only: [:index]
   end
 
+  scope "/auth", GithubRepoBrowserWeb do
+    pipe_through :browser
+
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", GithubRepoBrowserWeb do
   #   pipe_through :api
