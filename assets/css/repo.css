@@ -1,0 +1,9 @@
+#org-name {
+  font-size: 20px;
+}
+
+.repo-listing {
+  list-style-type: none;
+  border-top: 1px solid black;
+  font-size: 20px;
+}
