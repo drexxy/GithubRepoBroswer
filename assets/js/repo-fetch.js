@@ -32,5 +32,6 @@ function createRepoList(repo) {
     <a href=${repo.html_url} target="_blank">
       ${repo.name}
     </a>
+    <p>Star count: ${repo.stargazers_count}</p>
   </li>`;
 }
